@@ -10,8 +10,8 @@ numberfy = (val) ->
   if isNaN(val)
     # check for negative signs or parenthases.
     is_negative = if (val.match("-") || val.match(/\(.*\)/)) then -1 else 1
-    # remove any commas
-    val = val.replace(/,/g, "")
+    # replace comma decimal separateor with dot
+    val = val.replace(/,/g, ".")
     # return just the number and make it negative if needed.
     +(val.match(/\d+.?\d*/)[0]) * is_negative
   else
@@ -54,6 +54,9 @@ class window.DataObject
             # Some YNAB columns need special formatting,
             #   the rest are just returned as they are.
             switch col
+              # Merge multiple CSV fields in the the Memo field
+              when 'Memo'
+                tmp_row[col] = row['Entry number'] + '\n' + row['Counterparty account'] + ' ' + row['Entry Details'] 
               when 'Outflow'
                 number = numberfy(cell)
                 if lookup['Outflow'] == lookup['Inflow']
