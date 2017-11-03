@@ -56,7 +56,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat='row in export(10)'>
+                  <tr ng-repeat='row in export(100)'>
                     <td ng-repeat='col in ynab_cols'>
                       <span>{{row[col]}}</span>
                     </td>
@@ -76,7 +76,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat='row in data_object.rows() | limitTo:10'>
+                  <tr ng-repeat='row in data_object.rows() | limitTo:100'>
                     <td ng-repeat='col in data_object.fields()'>{{row[col]}}</td>
                   </tr>
                 </tbody>
