@@ -129,7 +129,11 @@ class window.DataObject
               when 'Payee'
                 tmp_row[col] = parse_payee(row)
               when 'Memo'
-                tmp_row[col] = row['Entry number'] + ' ' + row['Description']
+                if row['Description']?
+                  # Trim description of whitespace
+                  tmp_row[col] = row['Entry number'] + ' ' + row['Description'].substring(0, row['Description'].indexOf(' - ')).trim()
+                else
+                  tmp_row[col] = row['Entry number']
               when 'Outflow'
                 number = numberfy(cell)
                 if lookup['Outflow'] == lookup['Inflow']
