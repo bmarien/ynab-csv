@@ -85,6 +85,9 @@ parse_payee = (row) ->
     tmp_row_col = 'VISA'
   else
     tmp_row_col =  row['Counterparty account']
+  # Trim whitespace
+  if tmp_row_col?
+    tmp_row_col = tmp_row_col.trim().replace(/\s\s+/g, ";  ")
   return tmp_row_col
 
 
@@ -131,7 +134,7 @@ class window.DataObject
               when 'Memo'
                 if row['Description']?
                   # Trim description of whitespace
-                  tmp_row[col] = row['Entry number'] + ' ' + row['Description'].substring(0, row['Description'].indexOf(' - ')).trim()
+                  tmp_row[col] = row['Entry number'] + ' ' + row['Description'].substring(0, row['Description'].indexOf(' - ')).trim().replace(/\s\s+/g, ";  ")
                 else
                   tmp_row[col] = row['Entry number']
               when 'Outflow'
