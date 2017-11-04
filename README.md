@@ -1,7 +1,7 @@
 # ynab-csv
 
 
-Tool for making your CSV files ready to import into YNAB.
+Tool for making your CSV files ready to import into YNAB. This fork has been modified to parse CSV exports from ING Belgium.
 
 http://halloffame.github.io/ynab-csv/
 
