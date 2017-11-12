@@ -61,12 +61,12 @@ angular.element(document).ready ->
     $scope.ynab_cols = ['Date','Payee','Category','Memo','Outflow','Inflow']
     $scope.data = {}
     $scope.ynab_map =
-      Date:     'Booking date'
+      Date:     'Datum'
       Payee:    'Payee'
       Category: 'Category'
       Memo:     'Entry details' # In data_object.coffee we override this and merge multiple entry fields to the Memo field
-      Outflow:  'Amount'
-      Inflow:   'Amount'
+      Outflow:  'Valuta'
+      Inflow:   'Valuta'
     $scope.data_object = new DataObject()
 
     $scope.$watch 'data.source', (newValue, oldValue) ->

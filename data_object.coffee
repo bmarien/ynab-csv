@@ -134,7 +134,7 @@ class window.DataObject
               when 'Memo'
                 if row['Description']?
                   # Trim description of whitespace
-                  tmp_row[col] = row['Entry number'] + ' ' + row['Description'].substring(0, row['Description'].indexOf(' - ')).trim().replace(/\s\s+/g, ";  ")
+                  tmp_row[col] = row['Uitreksel'] + ' ' + row['Omschrijvfing'].substring(0, row['Rekening'].indexOf(' - ')).trim().replace(/\s\s+/g, ";  ")
                 else
                   tmp_row[col] = row['Entry number']
               when 'Outflow'
