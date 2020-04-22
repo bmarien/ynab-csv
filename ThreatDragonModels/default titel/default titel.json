@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "title": "default titel",
+    "owner": "owner"
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "bart"
+      }
+    ],
+    "diagrams": [
+      {
+        "title": "default",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "reviewer"
+  }
+}
